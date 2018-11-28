@@ -44,7 +44,7 @@ export class AppComponent {
   srcURL = this.domSanatizer.bypassSecurityTrustResourceUrl(this.youtubeUrl);
 
   passwd = 'absWSDCCs879sa&*^%';
-  passAct = true;
+  passAct ;
   activatePipe() {
     return (this.passAct) ? this.passAct = false : this.passAct = true;
   }
