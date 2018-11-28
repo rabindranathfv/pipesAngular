@@ -11,12 +11,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
 
   idUrl = 'zq6fVcOky1s';
-  youtubeUrl = 'https://www.youtube.com/embed/p1ueJ-1zB9I';
   iframe_html: any;
+  youtubeUrl = 'https://www.youtube.com/embed/p1ueJ-1zB9I';
   constructor( private embedVideoService: EmbedVideoService,
                private domSanatizer: DomSanitizer
   ) {
-    console.log(this.embedVideoService.embed_youtube(this.idUrl));
+    // console.log(this.embedVideoService.embed_youtube(this.idUrl));
     this.iframe_html = this.embedVideoService.embed_youtube(this.idUrl);
   }
 
@@ -42,4 +42,10 @@ export class AppComponent {
 
   formatName = 'RABINdranath fERREIRA';
   srcURL = this.domSanatizer.bypassSecurityTrustResourceUrl(this.youtubeUrl);
+
+  passwd = 'absWSDCCs879sa&*^%';
+  passAct = true;
+  activatePipe() {
+    return (this.passAct) ? this.passAct = false : this.passAct = true;
+  }
 }

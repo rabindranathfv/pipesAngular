@@ -10,7 +10,7 @@ export class specialPipe implements PipeTransform {
         valArr.forEach( (elem, index) => {
             valArr[index] = elem.charAt(0).toUpperCase() + elem.slice(1);
         });
-        console.log(valArr.join(' '));
+        // console.log(valArr.join(' '));
         return valArr.join(' ');
     }
 }

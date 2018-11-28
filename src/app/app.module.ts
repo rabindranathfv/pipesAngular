@@ -7,15 +7,15 @@ import { AppComponent } from './app.component';
 
 // for own Pipe implementation
 import { specialPipe  } from './pipes/specialPipe.pipe';
-import { SafeDomPipe } from './pipes/safe-dom.pipe';
 
 import { EmbedVideo } from 'ngx-embed-video';
+import { ShowPasswdPipe } from './pipes/show-passwd.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     // add new pipe here
     specialPipe,
-    SafeDomPipe
+    ShowPasswdPipe
   ],
   imports: [
     BrowserModule,

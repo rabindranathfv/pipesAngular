@@ -124,9 +124,9 @@
             </tr>
 
             <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
+                <th scope="row">{{ passwd }}/th>
+                    <td>pipe customized <button type="button" (click)="activatePipe()" class="btn btn-outline-primary ">activar/desactivar Pipe</button></td>
+                    <td>{{ passwd | showPasswd:passAct }}</td>
             </tr>
 
 
