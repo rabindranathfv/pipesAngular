@@ -1,21 +1,139 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
 
-<router-outlet></router-outlet>
+    <br>
+    <h1>Pipes</h1>
+    <hr class="divider">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Var</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ nombre }}</th>
+                <td>UpperCase Pipe</td>
+                <td>{{ nombre | uppercase }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ nombre }}</th>
+                <td>lowerCase Pipe</td>
+                <td>{{ nombre | lowercase }}</td>
+            </tr>
+            <tr>
+                <th scope="row">{{ nombre }}</th>
+                <td>Slice Pipe --> slice:0:10</td>
+                <td>{{ nombre | slice:0:10 }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ arr }}</th>
+                <td>Slice Pipe for Arr of numbers--> slice:1:5</td>
+                <td>{{ arr | slice:1:5 }}</td>
+            </tr>
+
+            <tr>
+                <!-- por default muestra 3 decimales-->
+                <th scope="row">{{ PI }}</th>
+                <td>Decimal Pipe --> number:'1.0-5'</td>
+                <!-- pipe format {minIntegerDigits}.{maxIntegerDigits} - {maxFractionDigits}-->
+                <td>{{ PI | number:'1.0-5' }}</td>
+            </tr>
+
+            <tr>
+                <!-- por default muestra 3 decimales-->
+                <th scope="row">{{ PI }}</th>
+                <td>Decimal Pipe --> number:'2.0-2'</td>
+                <!-- pipe format {minIntegerDigits}.{maxIntegerDigits} - {maxFractionDigits}-->
+                <td>{{ PI | number:'2.0-2' }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ dec }}</th>
+                <td>Percent Pipe</td>
+                <td>{{ dec | percent }}</td>
+            </tr>
+
+            <tr>
+                <!-- por default multiplica x 100 el decimal indicado-->
+                <th scope="row">{{ dec }}</th>
+                <td>percent Pipe --> percent:'2.1-2'</td>
+                <!-- pipe format {minIntegerDigits}.{maxIntegerDigits} - {maxFractionDigits}-->
+                <td>{{ dec | percent:'2.1-2' }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ money }}</th>
+                <td>Money Pipe for default</td>
+                <td>{{ money | currency }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ money }}</th>
+                <td>Money Pipe --> currency:'EUR':'symbol-narrow' </td>
+                <td>{{ money | currency:'EUR':'symbol-narrow':'.2-2' }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ jsonObj }}</th>
+                <td>Json Pipe </td>
+                <td>{{ jsonObj | json }}</td>
+            </tr>
+
+
+            <tr>
+                <th scope="row">{{ valuePromise }}</th>
+                <td>Async Pipe </td>
+                <td>{{ valuePromise | async }}</td>
+            </tr>
+
+
+            <tr>
+                <th scope="row">{{ dateTest }}</th>
+                <td>using Date Pipe --> Date </td>
+                <td>{{ dateTest | date }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ dateTest }}</th>
+                <td>using Date Pipe--> date:'medium' </td>
+                <td>{{ dateTest | date:'medium' }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">{{ dateTest }}</th>
+                <td>using Date Pipe--> date:'shortDate' </td>
+                <td>{{ dateTest | date:'shortDate' }}</td>
+            </tr>
+
+
+            <tr>
+                <th scope="row">{{ formatName }}</th>
+                <td>using perzonalize Pipe</td>
+                <td>{{ formatName | specialPipe }}</td>
+            </tr>
+
+
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+            </tr>
+
+            <tr>
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ videUrl }}"> </iframe>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
