@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
 import { resolve } from 'url';
 
+import { EmbedVideoService } from 'ngx-embed-video';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  idUrl = 'zq6fVcOky1s';
+  youtubeUrl = 'https://www.youtube.com/embed/p1ueJ-1zB9I';
+  iframe_html: any;
+  constructor( private embedVideoService: EmbedVideoService,
+               private domSanatizer: DomSanitizer
+  ) {
+    console.log(this.embedVideoService.embed_youtube(this.idUrl));
+    this.iframe_html = this.embedVideoService.embed_youtube(this.idUrl);
+  }
+
   title = 'pipesApp';
   nombre = 'Rabindranath Ferreira';
   arr = [1, 2, 6, 7, 8, 9, 2, 5];
@@ -28,6 +41,5 @@ export class AppComponent {
   dateTest = new Date();
 
   formatName = 'RABINdranath fERREIRA';
-
-  videoUrl = 'tgbNymZ7vqY';
+  srcURL = this.domSanatizer.bypassSecurityTrustResourceUrl(this.youtubeUrl);
 }
